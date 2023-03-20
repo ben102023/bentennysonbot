@@ -29,7 +29,7 @@ if DATABASE_URL:
     conn = MongoClient(DATABASE_URL)
     db = conn.mltb
     if config_dict := db.settings.config.find_one({'_id': bot_id}):  #retrun config dict (all env vars)
-    conn.close()
+        conn.close()
 
 UPSTREAM_REPO = 'https://github.com/5hojib/try'
 UPSTREAM_BRANCH = 'master'
